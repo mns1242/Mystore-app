@@ -1,0 +1,16 @@
+<div class="confirmation-container">
+    <div class="confirmation-items ">
+        <div class="confirmation-header confirmation-item">
+            <p><img src="../../assets/img/success.png" width="80" height="80" ></p>
+            SUCCESS
+        </div>
+        <div class="confirmation-item">Thank you, <b>{{ firstName }}</b></div>
+        <div class="confirmation-item">Your <b>${{ totalPrice }}</b> order is confirmed!</div>
+        <div class="confirmation-item">Please allow 1-3 business day(s) for shipping</div>
+        <div class="confirmation-item">
+                <a routerLink="/" (click)='onclick()' >
+                    Return to product list
+                </a>
+            </div>
+    </div>
+</div>

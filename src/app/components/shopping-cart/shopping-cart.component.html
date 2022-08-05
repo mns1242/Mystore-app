@@ -1,0 +1,28 @@
+<body class="cart-container">
+    <div class='cart-item'>
+        <div class='cart-item-details'>
+            <ul *ngFor='let product of products'>
+                <img src="{{ product.url }}" alt="" />
+
+                <p style="font-weight: bold">{{ product.name }}</p>
+                <p>${{ product.price }}</p>
+
+
+                <i (click)=" minus(product)" class="fa fa-minus-square p-2"></i>
+                {{product.quantity}}
+                <i (click)=" plus(product)" class="fa fa-plus-square p-2"></i>
+                <div class="d-flex flex-column mb-3">
+                    <button class="btn btn-danger p-2 w-75 " (click)="delete(product.id)">Delete</button>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class='cart-panel'>
+        <div class="form-margin">
+            <app-create-form (SuccessForm)="SuccessForm($event)">
+                
+            </app-create-form>
+        </div>
+        <label *ngIf="products.length>0" class="h3">Total: {{GrandTotal() | currency }}</label>
+    </div>
+</body>

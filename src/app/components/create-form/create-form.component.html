@@ -1,0 +1,13 @@
+<form #form="ngForm"  class='form-margin' (ngSubmit)="onSubmit()">
+    <label>Full name</label>
+    <input class="form-control" name=" FirstName" required minlength="5" maxlength="32" (ngModelChange)="FnameChanged($event)" [(ngModel)]=" FirstName">
+    <label>Address</label>
+    <input class="form-control" name="Address" required minlength="5" maxlength="32"
+        [(ngModel)]="Address">
+    <label>Credit card number</label>
+    <input type="number" required class="form-control" name="creditCardNumber"
+        [(ngModel)]="creditCardNumber" pattern="\d*" placeholder='16-digit number' required minlength='16'>
+    <span>we'll never share your payment details with anyone else</span>
+    <p><input  class="btn btn-primary" type="submit" value="Submit" *ngIf="FirstName.length >5"
+            routerLink='/submit'></p>
+</form>

@@ -1,0 +1,23 @@
+.product-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin-bottom: 64px;
+  }
+
+  .product-image {      
+    list-style-type: none;
+    width: 290px;
+    padding: 20px;
+    margin: 10px 30px;        
+    border: 1px solid #33B5E5;
+    
+  }
+  .card{
+      width: 350px;
+  } 
+  .select-input {
+    width: 108px; 
+    margin-bottom: 8px;
+  }

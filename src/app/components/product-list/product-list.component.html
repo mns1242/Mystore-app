@@ -1,0 +1,23 @@
+<section class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 product-index" *ngFor="let product of products">
+                <div class="card shadow-lg text-center">
+                  <img src={{product.url}} class="product-image" (click)="getitem(product)">
+                    <div class="card-body">
+                        <p class="h3">{{product.name}}</p>
+                        <p >{{product.price}}</p>
+
+                        <form class="my-1"  #productForm="ngForm" (ngSubmit)='onSubmit(product)'>
+                            <input type="number" name='quantity' class="select-input"  minlength="1"  maxlength="8" required max="8"  required min='1' [(ngModel)]="product.quantity">
+                            <br> 
+                            <button type='submit' [disabled]="productForm.invalid" class="btn btn-primary btn-sm" (click)="addItem(product)"> Add To Cart</button>
+                        </form>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
